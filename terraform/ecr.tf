@@ -1,5 +1,8 @@
 resource "aws_ecr_repository" "instance" {
   name = "ecr-repository"
+  encryption_configuration {
+    encryption_type = "KMS"
+  }
 }
 
 data "aws_ecr_repository" "instance" {
